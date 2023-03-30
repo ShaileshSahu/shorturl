@@ -3,7 +3,7 @@ const router = require('express').Router();
 router.post("/", (req,res) => {
     const path = new Date().getTime().toString();
     global.cache.set(path,req.body.url);
-    return res.render("index",{path: 'http://localhost:3000/'+path});
+    return res.render("index",{path: 'https://shorturl-lndx.onrender.com/'+path});
 });
 
 router.get("/:id", (req,res)=>{
