@@ -7,6 +7,12 @@ router.post("/", (req, res) => {
     return res.render("index", { path: 'https://shorturl-lndx.onrender.com/' + path });
 });
 
+router.post("/create", (req, res) => {
+    const path = randomGenerator(6);
+    global.cache.set(path, req.body.url);
+    return res.status(200).json({url: 'https://shorturl-lndx.onrender.com/' + path});
+});
+
 router.get("/:id", (req, res) => {
     const id = req.params.id;
     const url = global.cache.get(id);

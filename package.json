@@ -7,7 +7,8 @@
     "start": "node app.js",
     "watch": "nodemon app.js",
     "test": "mocha specs/**/*.spec.js",
-    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +21,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "nodemon": "^2.0.22",
     "nyc": "^15.1.0"
   }
